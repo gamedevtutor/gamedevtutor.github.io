@@ -1,0 +1,333 @@
+<!--
+  Modern Landing Page for a Coaching and Tutoring Service
+
+  This single‑page site uses Tailwind CSS for rapid styling and follows design
+  patterns from best‑practice coaching and tutoring pages: a clear hero section,
+  cards for services focused on one‑on‑one coaching,
+  testimonials, about section, FAQs, and a contact form. The hero background
+  image (hero-background.png) lives alongside this file; update the file or its
+  path as needed. Be sure to replace placeholder links (GitHub, LinkedIn,
+  YouTube, email) with your own.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Game Development Coaching &amp; Tutoring</title>
+  <!-- Tailwind CSS via CDN for quick styling -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+  <!-- Heroicons for modern icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <!-- Custom styles for glassmorphism and smooth transitions -->
+  <style>
+    #hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(16,185,129,0.5) 0%, rgba(0,0,0,0.6) 100%);
+      backdrop-filter: blur(2px);
+      z-index: 0;
+    }
+    .glass {
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 1rem;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .transition-all {
+      transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    }
+    .floating-shadow {
+      box-shadow: 0 8px 24px 0 rgba(16,185,129,0.12), 0 1.5px 4px 0 rgba(0,0,0,0.04);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased leading-normal tracking-normal text-gray-900">
+  <!-- Navigation Bar -->
+  <header class="bg-white/80 floating-shadow fixed w-full z-20 top-0 backdrop-blur-md transition-all">
+    <div class="container mx-auto flex flex-wrap items-center justify-between py-2 px-6">
+      <a href="#hero" class="flex items-center text-xl font-bold text-emerald-600">
+        YourName
+      </a>
+      <nav class="hidden md:flex space-x-6 text-gray-700 text-sm font-medium">
+  <a href="#services" class="hover:text-emerald-600 transition-all">Services</a>
+  <a href="#testimonials" class="hover:text-emerald-600 transition-all">Results</a>
+  <a href="#about" class="hover:text-emerald-600 transition-all">About</a>
+  <a href="#faq" class="hover:text-emerald-600 transition-all">FAQ</a>
+  <a href="#contact" class="hover:text-emerald-600 transition-all">Contact</a>
+      </nav>
+      <a
+        href="#contact"
+        class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-5 py-2 rounded-lg shadow-md hover:scale-105 hover:from-emerald-600 hover:to-green-500 transition-all font-semibold"
+      >
+        Book a Call
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section
+    id="hero"
+  class="relative min-h-screen flex items-center justify-center text-white overflow-hidden"
+  style="background-image: url('hero-background.png'); background-size: cover; background-position: center;"
+  >
+    <div class="relative z-10 text-center px-6">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg text-white animate-fade-in">
+        Level Up with <span class="underline decoration-emerald-400">Personalized Coaching</span>
+      </h1>
+      <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-medium text-white/90 animate-fade-in delay-100">
+        One‑on‑one mentorship in Unreal Engine, Unity, game programming, design
+        and narrative storytelling from a seasoned developer and educator.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in delay-200">
+        <a
+          href="#services"
+          class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-7 py-3 rounded-xl shadow-lg hover:scale-105 hover:from-emerald-600 hover:to-green-500 transition-all font-semibold"
+          >Start Coaching</a
+        >
+        <a
+          href="#contact"
+          class="bg-white/90 text-emerald-700 hover:bg-emerald-50 px-7 py-3 rounded-xl shadow-lg font-semibold border border-emerald-200 hover:scale-105 transition-all"
+          >Book a Free Consultation</a
+        >
+      </div>
+      <div class="mt-10 flex justify-center space-x-6 animate-fade-in delay-300">
+        <a href="https://github.com/yourusername" class="hover:text-emerald-400" aria-label="GitHub"><i data-feather="github"></i></a>
+        <a href="https://linkedin.com/in/yourusername" class="hover:text-emerald-400" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+        <a href="https://youtube.com/yourchannel" class="hover:text-emerald-400" aria-label="YouTube"><i data-feather="youtube"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points Section -->
+  <section id="selling" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Choose My Coaching?</h2>
+      <div class="max-w-3xl mx-auto">
+        <ul class="list-disc list-inside space-y-4 text-base md:text-lg">
+          <li>One‑on‑one mentoring sessions with expert guidance to help you reach your goals.</li>
+          <li>Custom‑tailored mentorships designed to break through plateaus and build the technical skills you need.</li>
+          <li>Seasoned industry veteran with AAA &amp; indie experience offers real‑world insights and proven expertise.</li>
+          <li>Gain clarity on your career direction, target the right roles &amp; companies, and build a plan of action.</li>
+          <li>Accountability, honest feedback &amp; a clear strategy to ensure you stay on track.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Personal Coaching &amp; Tutoring</h2>
+      <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
+        <!-- One‑on‑One Coaching Card -->
+        <div class="glass p-8 rounded-2xl shadow-2xl flex flex-col border border-emerald-100 hover:scale-[1.02] transition-all">
+          <h3 class="text-2xl font-bold mb-2 text-emerald-700">One‑on‑One Coaching</h3>
+          <p class="flex-grow text-gray-800/90">
+            Personalized mentorship tailored to your goals. Together we'll create a custom learning plan and meet regularly to master the tools and skills you need to thrive.
+          </p>
+          <ul class="list-disc list-inside my-4 space-y-1 text-base text-gray-700">
+            <li>Custom learning roadmap &amp; weekly sessions</li>
+            <li>Unreal Engine (Blueprint &amp; C++), Unity (C#)</li>
+            <li>Game programming fundamentals</li>
+            <li>Game design principles &amp; narrative storytelling</li>
+            <li>Portfolio &amp; career guidance</li>
+          </ul>
+          <a
+            href="#contact"
+            class="mt-auto inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white px-5 py-2 rounded-lg shadow-md hover:scale-105 hover:from-emerald-600 hover:to-green-500 transition-all font-semibold"
+            >Start Coaching</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Success Stories</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="glass p-6 rounded-2xl shadow-xl">
+          <p class="text-base italic mb-4 text-gray-800/90">
+            “Thanks to this coaching program, I landed my dream job in the game
+            industry. The personalized feedback and weekly accountability kept me
+            on track.”
+          </p>
+          <p class="font-semibold text-emerald-700">— Alex&nbsp;J.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl shadow-xl">
+          <p class="text-base italic mb-4 text-gray-800/90">
+            “The personal coaching sessions were challenging, collaborative, and incredibly rewarding.
+            I built a portfolio piece that stands out and gained amazing
+            connections.”
+          </p>
+          <p class="font-semibold text-emerald-700">— Mia&nbsp;P.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl shadow-xl">
+          <p class="text-base italic mb-4 text-gray-800/90">
+            “I have taken many programs before, but none were as practical and
+            motivating. Highly recommend for any aspiring developer.”
+          </p>
+          <p class="font-semibold text-emerald-700">— Samuel&nbsp;K.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
+      <div
+        class="md:flex md:items-center md:justify-center md:space-x-12 text-gray-800"
+      >
+        <!-- Placeholder image reused; replace with your own portrait if available -->
+        <img
+          src="hero-background.png"
+          alt="Your photo"
+          class="w-64 h-64 object-cover rounded-full mb-6 md:mb-0 shadow-2xl border-4 border-emerald-200"
+        />
+        <div class="max-w-xl">
+          <p class="mb-4">
+            Hi, I'm [Your Name], a game developer and educator with over 15 years
+            of experience spanning AAA titles, indie projects, and classroom
+            teaching. My mission is to empower aspiring developers and creatives
+            to build sustainable, fulfilling careers.
+          </p>
+          <p class="mb-4">
+            Throughout my career, I've shipped major titles, mentored hundreds
+            of students, and developed curriculum at top institutions. I blend
+            technical rigor with creative exploration, ensuring you gain both
+            hard skills and industry insight.
+          </p>
+          <p class="mb-4">
+            Whether you're breaking into the industry or leveling up your
+            existing skills, I'm here to support your journey.
+          </p>
+          <div class="flex space-x-4 mt-4">
+            <a
+              href="https://github.com/yourusername"
+              class="text-green-700 hover:text-green-900 underline"
+              >GitHub</a
+            >
+            <a
+              href="https://linkedin.com/in/yourusername"
+              class="text-green-700 hover:text-green-900 underline"
+              >LinkedIn</a
+            >
+            <a
+              href="https://youtube.com/yourchannel"
+              class="text-green-700 hover:text-green-900 underline"
+              >YouTube</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4 max-w-4xl mx-auto">
+        <details class="bg-white rounded-lg shadow-md p-4">
+          <summary class="font-semibold cursor-pointer">
+            Who is this coaching for?
+          </summary>
+          <p class="mt-2 text-sm">
+            This coaching is designed for emerging game developers, students,
+            and professionals seeking to upskill in design and programming. No
+            matter your starting point, you'll receive personalized guidance.
+          </p>
+        </details>
+        <details class="bg-white rounded-lg shadow-md p-4">
+          <summary class="font-semibold cursor-pointer">
+            What equipment or software do I need?
+          </summary>
+          <p class="mt-2 text-sm">
+            You'll need a computer capable of running modern game engines (Unity
+            or Unreal) and access to online collaboration tools. Specific
+            requirements will be shared upon enrollment.
+          </p>
+        </details>
+        <details class="bg-white rounded-lg shadow-md p-4">
+          <summary class="font-semibold cursor-pointer">
+            Can I get a refund if I'm not satisfied?
+          </summary>
+          <p class="mt-2 text-sm">
+            Yes! If you attend the first session and feel it's not right for you,
+            contact me within one week for a full refund. Your satisfaction
+            matters.
+          </p>
+        </details>
+        <details class="bg-white rounded-lg shadow-md p-4">
+          <summary class="font-semibold cursor-pointer">
+            Do you offer corporate workshops?
+          </summary>
+          <p class="mt-2 text-sm">
+            Absolutely. Custom workshops for teams and organizations are
+            available. Reach out via the contact form to discuss your goals.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
+      <div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
+        <div class="glass overflow-hidden rounded-lg">
+          <!-- Replace the URL below with your actual Google Form embed URL -->
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeRO3cBrhvdkilAK_GDm9hVHEldwEKICT4rC8vFQXh-aIeu4g/viewform?embedded=true"
+            width="640" height="720" frameborder="0" ></iframe>
+        </div>
+        <p class="text-center text-sm text-gray-600 mt-4">
+          Or email me directly at
+          <a href="mailto:youremail@example.com" class="underline text-green-700"
+            >youremail@example.com</a
+          >
+        </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6">
+    <div
+      class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center"
+    >
+      <p class="text-sm">&copy; 2025 [Your Name]. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="https://github.com/yourusername" class="hover:text-emerald-400" aria-label="GitHub"><i data-feather="github"></i></a>
+        <a href="https://linkedin.com/in/yourusername" class="hover:text-emerald-400" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+        <a href="https://youtube.com/yourchannel" class="hover:text-emerald-400" aria-label="YouTube"><i data-feather="youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+  <script>
+    feather.replace();
+    // Simple fade-in animation
+    document.querySelectorAll('.animate-fade-in').forEach((el, i) => {
+      el.style.opacity = 0;
+      setTimeout(() => {
+        el.style.transition = 'opacity 0.8s cubic-bezier(.4,0,.2,1)';
+        el.style.opacity = 1;
+      }, 200 + (parseInt(el.className.match(/delay-(\d+)/)?.[1] || 0)));
+    });
+  </script>
+</html>
